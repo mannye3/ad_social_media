@@ -64,7 +64,7 @@ const loginController=async(req,res,next)=>{
             process.env.JWT_SECRET,
             { expiresIn: process.env.JWT_EXPIRATION }
         );
-        res.cookie("token", token).status(200).json({ message: "Logged in successfully" });
+        res.cookie("token", token).status(200).json({ message: "Logged in successfully" , token: token});
 
     } catch (error) {
        next(error)
